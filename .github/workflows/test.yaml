@@ -1,13 +1,16 @@
-name: testing-github-workflow
-run-name: ${{ github.actor }} is testing GitHub Actions
-on: [push]
+name: deploy to DigitalOcean instace
+
+on: 
+  push:
+    branches: [develop]
 jobs:
-  check-bats-version:
+  building-and-deploying:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+      - run: npm install
+      - run: npm run build
+      - run: cat ./dist/index.html
