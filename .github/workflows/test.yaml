@@ -1,0 +1,43 @@
+name: deploy to DigitalOcean instace
+
+on: 
+  push:
+    branches: [main]
+jobs:
+  building:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - name: install dependencies
+        run: npm install
+      - name: build project
+        run: npm run build
+      - name: upload dist folder as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: ./dist
+  deploying:
+    needs: [building]
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+      - name: download dist folder artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: ./dist/
+      - name: deploying to digital ocean instace
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.REMOTE_PORT }}
+          source: "dist/"
+          target: ${{ secrets.REMOTE_TARGET }}

@@ -1,0 +1,38 @@
+---
+import Tag from './Tag.astro'
+
+interface Technology {
+  name: string;
+}
+
+export interface Props {
+  title: string;
+  about: string;
+  stack: Array<Technology>;
+  img: string;
+}
+
+const { title, about, stack, img } = Astro.props
+---
+
+<div class="bg-violet-600 bg-opacity-10 border-violet-600 border-2 rounded-lg w-[300px] flex flex-col p-4">
+  <span class="text-white font-bold text-lg">{title}</span>
+  <span class="text-white opacity-50 mt-2" >{about}</span>
+
+  <div class="w-full flex gap-2 mt-8">
+    {stack.map(tech => (
+      <Tag title={tech.name}/>
+    ))}
+  </div>
+
+  <div class="img-container mt-2">
+    <img src={img}>
+  </div>
+</div>
+
+<style>
+.img-container {
+  overflow: hidden;
+  border-radius: 12px;
+}
+</style>
