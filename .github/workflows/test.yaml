@@ -32,7 +32,11 @@ jobs:
           name: dist
           path: ./dist/
       - name: deploying to digital ocean instace
-        shell: bash
-        run: ls ./dist/
-        
-
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.REMOTE_PORT }}
+          source: "dist/"
+          target: ${{ secrets.REMOTE_TARGET }}
