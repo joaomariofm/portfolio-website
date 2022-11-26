@@ -2,7 +2,7 @@ name: deploy to DigitalOcean instace
 
 on: 
   push:
-    branches: [develop]
+    branches: [main]
 jobs:
   building:
     runs-on: ubuntu-latest
