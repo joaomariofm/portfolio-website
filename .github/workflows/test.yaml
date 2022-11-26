@@ -30,6 +30,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist
-      - name: deploy to DigitalOcean instance
-        run: cat ./dist/index.html
+      - shell: bash
+        run: ls -a
+        
 
