@@ -31,7 +31,8 @@ jobs:
         with:
           name: dist
           path: ./dist/
-      - shell: bash
-        run: ls -a
+      - name: deploying to digital ocean instace
+        shell: bash
+        run: ls ./dist/
         
 
