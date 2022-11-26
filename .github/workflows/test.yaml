@@ -4,7 +4,7 @@ on:
   push:
     branches: [develop]
 jobs:
-  building-and-deploying:
+  building:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -15,5 +15,11 @@ jobs:
         run: npm install
       - name: build project
         run: npm run build
+  deploying:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
       - name: deploy to DigitalOcean instance
         run: cat ./dist/index.html
+
