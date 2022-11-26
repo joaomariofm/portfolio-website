@@ -16,6 +16,7 @@ jobs:
       - name: build project
         run: npm run build
   deploying:
+    needs: [building]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
