@@ -15,6 +15,11 @@ jobs:
         run: npm install
       - name: build project
         run: npm run build
+      - name: upload dist folder as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: ./dist
   deploying:
     needs: [building]
     runs-on: ubuntu-latest
