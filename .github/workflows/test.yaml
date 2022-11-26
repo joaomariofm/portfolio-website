@@ -12,8 +12,8 @@ jobs:
         with:
           node-version: '14'
       - name: install dependencies
-        - run: npm install
+        run: npm install
       - name: build project
-        - run: npm run build
+        run: npm run build
       - name: deploy to DigitalOcean instance
-        - run: cat ./dist/index.html
+        run: cat ./dist/index.html
