@@ -11,6 +11,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install
-      - run: npm run build
-      - run: cat ./dist/index.html
+      - name: install dependencies
+        - run: npm install
+      - name: build project
+        - run: npm run build
+      - name: deploy to DigitalOcean instance
+        - run: cat ./dist/index.html
