@@ -1,81 +1,134 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import TitleCard from "../components/TitleCard.astro";
+import InfoCard from "../components/InfoCard.astro";
+import SkillCard from "../components/SkillCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			To get started, open the directory <code>src/pages</code> in your project.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
-		</ul>
-	</main>
-</Layout>
+<Layout title="Testing title">
+  <main class="bg-neutral-900 min-h-screen">
 
-<style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
-		margin: 0;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
-	}
-	.instructions code {
-		font-size: 0.875em;
-		font-weight: bold;
-		background: rgba(var(--accent), 12%);
-		color: rgb(var(--accent));
-		border-radius: 4px;
-		padding: 0.3em 0.45em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
+    <div class="bg-black">
+      <section class="container mx-auto py-24">
+        <div class="flex justify-center">
+          <h1 class="text-white text-center text-5xl font-extrabold">Desenvolvedor 
+            <span class="text-violet-600">Frontend</span>, entusiasta por 
+            <span class="text-violet-600"> Tecnologia</span>!
+          </h1>
+        </div>
+      </section>
+    </div>
+
+    <div class="w-full flex justify-center mt-[-60px]">
+      <InfoCard/>
+    </div>
+
+
+    <section class="container mx-auto p-8 mt-10">
+      <div class="flex flex-col items-start gap-4">
+        <TitleCard title="Saudações!">
+          <img src="/emojis/hand-emoji.svg" alt="hand-emoji">
+        </TitleCard>
+  
+        <div class="text-white text-left">
+          <span>
+            Olá, é um prazer ter você por aqui! Meu nome é João Mário, e esse é um website criado 
+            com o objetivo de registrar e documentar meu crescimento profissional como desenvolvedor web.
+          </span>
+          <br>
+          <span>
+            Aqui você encontrará descrições das tecnologias que domino, além de documentações de projetos, 
+            que em sua maioria são voltados para desenvolvimento web!
+          </span>
+  
+        </div>
+      </div>
+    </section>
+
+
+    <section class="container mx-auto p-8">
+      <div class="flex flex-col items-start gap-4">
+        <TitleCard title="Tecnologias">
+          <img src="/emojis/joy-stick-emoji.svg" alt="joy-stick-emoji">
+        </TitleCard>
+
+        <SkillCard 
+          icons={
+            [
+              { path: "/icons/html-icon.svg", name: "html"},
+              { path: "/icons/css-icon.svg", name: "css"}
+            ]
+          }
+          text='“Não ergas alto um edifício sem fortes alicerces, se o fizeres viverás com medo”. Acredito fortemente que essa ideia é aplicável ao desenvolvimento web. É preciso domínio de tecnologias básicas antes de se aventurar com um novo framework... Por isso, me orgulho de dominar tecnologias como html5 e css3.'
+        />
+
+        <SkillCard 
+          icons={
+            [
+              { path: "/icons/js-icon.svg", name: "js"},
+              { path: "/icons/typescript-icon.svg", name: "typescript"}
+            ]
+          }
+          text='Linguagens de programação são ferramentas extremamente poderosas, e pro contexto de desenvolvimento web JavaScript é indispensável. Tenho 2 anos de experiência com a linguagem e mais recentemente tenho utilizado Typescript devido às melhoras que ele proporciona na estruturação do código e prevenção de bugs. '
+
+        />
+
+        <SkillCard 
+          icons={
+            [
+              { path: "/icons/vue-icon.svg", name: "vue"},
+              { path: "/icons/react-icon.svg", name: "react"}
+            ]
+          }
+          text='Já com relação a Frameworks voltados para o desenvolvimento frontend de forma geral, tenho 1 ano de experiência profissional com Vue.js. E em paralelo, estudo e utilizo frequentemente em projetos pessoais React.js. Ambos são ferramentas incríveis que otimizam muito a construção de interfaces dinâmicas.'
+        />
+
+        <SkillCard 
+          icons={
+            [
+              { path: "/icons/bootstrap-icon.svg", name: "bootstrap"},
+              { path: "/icons/tailwind-icon.svg", name: "tailwind"}
+            ]
+          }
+          text='Praticidade na estilização de um interface pode facilitar muito o processo de desenvolvimento. E para isso, escolhi estudar os frameworks css Bootstrap e Tailwind.'
+        />
+      </div>
+    </section>
+
+    <section class="pb-4">
+      <div class="container mx-auto p-8 flex"> 
+        <TitleCard title="Projetos">
+          <img src="/emojis/files-emoji.svg" alt="files-emoji">
+        </TitleCard>
+      </div>
+
+      <div class="px-8 pb-2 snap-x snap-mandatory w-screen flex gap-4 overflow-scroll">
+        <div class="snap-center">
+          <ProjectCard
+            title="Spining Donut"
+            about="Simplesmente um donut que gira, sim... Nem tudo precisa ser útil"
+            stack={[{ name: "React" }, { name: "C" }]}
+            img="/spinning-donut.png"
+          />
+        </div>
+        <div class="snap-center">
+          <ProjectCard
+            title="Spining Donut"
+            about="Simplesmente um donut que gira, sim... Nem tudo precisa ser útil"
+            stack={[{ name: "React" }, { name: "C" }]}
+            img="/spinning-donut.png"
+          />
+        </div>
+        <div class="snap-start">
+          <ProjectCard
+            title="Spining Donut"
+            about="Simplesmente um donut que gira, sim... Nem tudo precisa ser útil"
+            stack={[{ name: "React" }, { name: "C" }]}
+            img="/spinning-donut.png"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
