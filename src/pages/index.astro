@@ -31,7 +31,7 @@ import ProjectCard from "../components/ProjectCard.astro";
           <img src="/emojis/hand-emoji.svg" alt="hand-emoji">
         </TitleCard>
   
-        <div class="text-white text-left">
+        <div class="text-white text-left max-w-[600px]">
           <span>
             Olá, é um prazer ter você por aqui! Meu nome é João Mário, e esse é um website criado 
             com o objetivo de registrar e documentar meu crescimento profissional como desenvolvedor web.
@@ -53,57 +53,68 @@ import ProjectCard from "../components/ProjectCard.astro";
           <img src="/emojis/joy-stick-emoji.svg" alt="joy-stick-emoji">
         </TitleCard>
 
-        <SkillCard 
-          icons={
-            [
-              { path: "/icons/html-icon.svg", name: "html"},
-              { path: "/icons/css-icon.svg", name: "css"}
-            ]
-          }
-          text='“Não ergas alto um edifício sem fortes alicerces, se o fizeres viverás com medo”. Acredito fortemente que essa ideia é aplicável ao desenvolvimento web. É preciso domínio de tecnologias básicas antes de se aventurar com um novo framework... Por isso, me orgulho de dominar tecnologias como html5 e css3.'
-        />
+        <div class="w-full flex flex-col gap-4 
+          md:grid md:grid-cols-2
+          xl:grid xl:grid-cols-4
+        ">
 
-        <SkillCard 
-          icons={
-            [
-              { path: "/icons/js-icon.svg", name: "js"},
-              { path: "/icons/typescript-icon.svg", name: "typescript"}
-            ]
-          }
-          text='Linguagens de programação são ferramentas extremamente poderosas, e pro contexto de desenvolvimento web JavaScript é indispensável. Tenho 2 anos de experiência com a linguagem e mais recentemente tenho utilizado Typescript devido às melhoras que ele proporciona na estruturação do código e prevenção de bugs. '
+          <SkillCard 
+            icons={
+              [
+                { path: "/icons/html-icon.svg", name: "html"},
+                { path: "/icons/css-icon.svg", name: "css"}
+              ]
+            }
+            text='“Não ergas alto um edifício sem fortes alicerces, se o fizeres viverás com medo”. Acredito fortemente que essa ideia é aplicável ao desenvolvimento web. É preciso domínio de tecnologias básicas antes de se aventurar com um novo framework... Por isso, me orgulho de dominar tecnologias como html5 e css3.'
+          />
 
-        />
+          <SkillCard 
+            icons={
+              [
+                { path: "/icons/js-icon.svg", name: "js"},
+                { path: "/icons/typescript-icon.svg", name: "typescript"}
+              ]
+            }
+            text='Linguagens de programação são ferramentas extremamente poderosas, e pro contexto de desenvolvimento web JavaScript é indispensável. Tenho 2 anos de experiência com a linguagem e mais recentemente tenho utilizado Typescript devido às melhoras que ele proporciona na estruturação do código e prevenção de bugs. '
 
-        <SkillCard 
-          icons={
-            [
-              { path: "/icons/vue-icon.svg", name: "vue"},
-              { path: "/icons/react-icon.svg", name: "react"}
-            ]
-          }
-          text='Já com relação a Frameworks voltados para o desenvolvimento frontend de forma geral, tenho 1 ano de experiência profissional com Vue.js. E em paralelo, estudo e utilizo frequentemente em projetos pessoais React.js. Ambos são ferramentas incríveis que otimizam muito a construção de interfaces dinâmicas.'
-        />
+          />
 
-        <SkillCard 
-          icons={
-            [
-              { path: "/icons/bootstrap-icon.svg", name: "bootstrap"},
-              { path: "/icons/tailwind-icon.svg", name: "tailwind"}
-            ]
-          }
-          text='Praticidade na estilização de um interface pode facilitar muito o processo de desenvolvimento. E para isso, escolhi estudar os frameworks css Bootstrap e Tailwind.'
-        />
+          <SkillCard 
+            icons={
+              [
+                { path: "/icons/vue-icon.svg", name: "vue"},
+                { path: "/icons/react-icon.svg", name: "react"}
+              ]
+            }
+            text='Já com relação a Frameworks voltados para o desenvolvimento frontend de forma geral, tenho 1 ano de experiência profissional com Vue.js. E em paralelo, estudo e utilizo frequentemente em projetos pessoais React.js. Ambos são ferramentas incríveis que otimizam muito a construção de interfaces dinâmicas.'
+          />
+
+          <SkillCard 
+            icons={
+              [
+                { path: "/icons/bootstrap-icon.svg", name: "bootstrap"},
+                { path: "/icons/tailwind-icon.svg", name: "tailwind"}
+              ]
+            }
+            text='Praticidade na estilização de um interface pode facilitar muito o processo de desenvolvimento. E para isso, escolhi estudar os frameworks css Bootstrap e Tailwind.'
+          />
+
+        </div>
       </div>
     </section>
 
-    <section class="pb-4">
+    <section class="pb-4
+      md:container md:mx-auto
+    ">
       <div class="container mx-auto p-8 flex"> 
         <TitleCard title="Projetos">
           <img src="/emojis/files-emoji.svg" alt="files-emoji">
         </TitleCard>
       </div>
 
-      <div class="px-8 pb-2 snap-x snap-mandatory w-screen flex gap-4 overflow-scroll">
+      <div class="snap-x snap-mandatory w-screen flex gap-4 overflow-scroll 
+        md:overflow-visible md:w-full md:flex-wrap
+        px-8 pb-2">
         <div class="snap-center">
           <ProjectCard
             title="Spining Donut"
