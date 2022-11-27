@@ -3,11 +3,11 @@ import Layout from "../layouts/Layout.astro";
 import TitleCard from "../components/TitleCard.astro";
 import InfoCard from "../components/InfoCard.astro";
 import SkillCard from "../components/SkillCard.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import InProgress from "../components/InProgress.astro";
 ---
 
 <Layout title="Portfolio Website">
-  <main class="bg-neutral-900 min-h-screen">
+  <main class="bg-zinc-900 min-h-screen">
 
     <div class="bg-black">
       <section class="container mx-auto py-24">
@@ -125,57 +125,15 @@ import ProjectCard from "../components/ProjectCard.astro";
       </div>
     </section>
 
-    <section class="md:container md:mx-auto">
-      <div class="container mx-auto px-8 py-4 flex"> 
+    <section class="container mx-auto p-8">
+      <div class="flex items-center gap-4 pb-10"> 
         <TitleCard title="Projetos">
           <img src="/emojis/files-emoji.svg" alt="files-emoji">
         </TitleCard>
       </div>
 
-      <div class="snap-x snap-mandatory w-screen flex gap-4 overflow-scroll 
-        md:overflow-visible md:w-full md:grid md:grid-cols-2
-        lg:overflow-visible lg:w-full lg:grid lg:grid-cols-3
-        px-8 pb-8">
-        <div class="snap-center">
-          <ProjectCard
-            title="Spining Donut"
-            about="Simplesmente um donut que gira, sim... Nem tudo precisa ser útil"
-            stack={[{ name: "React" }, { name: "C" }]}
-            img="/spinning-donut.png"
-          />
-        </div>
-        <div class="snap-center">
-          <ProjectCard
-            title="Spining Donut"
-            about="Simplesmente um donut que gira, sim... Nem tudo precisa ser útil"
-            stack={[{ name: "React" }, { name: "C" }]}
-            img="/spinning-donut.png"
-          />
-        </div>
-        <div class="snap-center">
-          <ProjectCard
-            title="Spining Donut"
-            about="Simplesmente um donut que gira, sim... Nem tudo precisa ser útil"
-            stack={[{ name: "React" }, { name: "C" }]}
-            img="/spinning-donut.png"
-          />
-        </div>
-        <div class="snap-center">
-          <ProjectCard
-            title="Spining Donut"
-            about="Simplesmente um donut que gira, sim... Nem tudo precisa ser útil"
-            stack={[{ name: "React" }, { name: "C" }]}
-            img="/spinning-donut.png"
-          />
-        </div>
-        <div class="snap-center">
-          <ProjectCard
-            title="Spining Donut"
-            about="Simplesmente um donut que gira, sim... Nem tudo precisa ser útil"
-            stack={[{ name: "React" }, { name: "C" }]}
-            img="/spinning-donut.png"
-          />
-        </div>
+      <div class="w-full flex justify-center">
+        <InProgress/>
       </div>
     </section>
   </main>
