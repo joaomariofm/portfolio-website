@@ -22,9 +22,10 @@ const { title } = Astro.props;
 	<body>
 		<slot />
 	</body>
-  <footer class="bg-black flex justify-end gap-2 px-3 py-2">
-    <a class="w-[28px]" target="_blank" href="https://github.com/JoaoMario17">
-      <img src="/icons/github-logo.svg" alt="github-logo">
+  <footer class="bg-black gap-2 px-3 py-2">
+	<div class="container mx-auto flex justify-end gap-2 px-8">
+		<a class="w-[28px]" target="_blank" href="https://github.com/JoaoMario17">
+			<img src="/icons/github-logo.svg" alt="github-logo">
     </a>
     <a class="w-[28px]" target="_blank" href="https://www.linkedin.com/in/jo%C3%A3o-m%C3%A1rio-fidelis/">
       <img src="/icons/linkedin-logo.svg" alt="linkedin-logo">
@@ -32,6 +33,7 @@ const { title } = Astro.props;
     <a class="w-[28px]" target="_blank" href="https://twitter.com/JoaoMarioF1">
       <img src="/icons/twitter-logo.svg" alt="twitter-logo">
     </a>
+	</div>
   </footer>
 </html>
 <style is:global>
