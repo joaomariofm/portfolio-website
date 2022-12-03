@@ -9,9 +9,16 @@ import InProgress from "../components/InProgress.astro";
 <Layout title="Portfolio Website">
   <main class="bg-zinc-900 min-h-screen">
 
-    <div class="bg-black">
-      <section class="container mx-auto py-24">
-        <div class="flex items-center">
+    <div class="bg-black w-full relative">
+      <div class="absolute w-full h-full">
+        <canvas id="canvas-tag"></canvas>
+      </div>
+
+      <div class="absolute bg-black bg-opacity-40 w-full h-full">
+
+      </div>
+      <section class="container mx-auto py-16">
+        <div class="flex items-center relative py-8">
           <div class="w-full h-fit lg:w-1/2 lg:pl-8 lg:pr-60">
             <h1 class="text-white text-center lg:text-start text-5xl font-extrabold">Desenvolvedor 
               <span class="text-violet-600">Frontend</span>, entusiasta por 
@@ -25,29 +32,28 @@ import InProgress from "../components/InProgress.astro";
             </TitleCard>
       
             <div class="text-white text-right max-w-[600px]">
-              <span>
+              <span class="font-bold">
                 Olá, é um prazer ter você por aqui! Meu nome é João Mário, e esse é um website criado 
                 com o objetivo de registrar e documentar meu crescimento profissional como desenvolvedor web.
               </span>
               <br>
-              <span>
+              <span class="font-bold">
                 Aqui você encontrará descrições das tecnologias que domino, além de documentações de projetos, 
                 que em sua maioria são voltados para desenvolvimento web!
               </span>
       
             </div>
           </div>
-        </div>
 
+          <div class="w-full flex justify-center absolute bottom-[-130px]">
+            <InfoCard/>
+          </div>
+        </div>
       </section>
     </div>
 
-    <div class="w-full flex justify-center mt-[-60px]">
-      <InfoCard/>
-    </div>
 
-
-    <section class="lg:hidden flex container mx-auto p-8 mt-10">
+    <section class="lg:hidden flex container mx-auto p-8 mt-20">
       <div class="flex flex-col items-start gap-4">
         <TitleCard title="Saudações!">
           <img src="/emojis/hand-emoji.svg" alt="hand-emoji">
@@ -69,7 +75,7 @@ import InProgress from "../components/InProgress.astro";
     </section>
 
 
-    <section class="container mx-auto p-8">
+    <section class="container mx-auto p-8 mt-20">
       <div class="flex flex-col items-start gap-4">
         <TitleCard title="Tecnologias">
           <img src="/emojis/joy-stick-emoji.svg" alt="joy-stick-emoji">
