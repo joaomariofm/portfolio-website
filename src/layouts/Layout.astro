@@ -18,22 +18,24 @@ const { title } = Astro.props;
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script src="../../node_modules/matrix-effect/script/index.js"></script>
 	</head>
 	<body>
 		<slot />
 	</body>
   <footer class="bg-black gap-2 px-3 py-2">
-	<div class="container mx-auto flex justify-end gap-2 px-8">
-		<a class="w-[28px]" target="_blank" href="https://github.com/JoaoMario17">
-			<img src="/icons/github-logo.svg" alt="github-logo">
-    </a>
-    <a class="w-[28px]" target="_blank" href="https://www.linkedin.com/in/jo%C3%A3o-m%C3%A1rio-fidelis/">
-      <img src="/icons/linkedin-logo.svg" alt="linkedin-logo">
-    </a>
-    <a class="w-[28px]" target="_blank" href="https://twitter.com/JoaoMarioF1">
-      <img src="/icons/twitter-logo.svg" alt="twitter-logo">
-    </a>
-	</div>
+    <div class="container mx-auto flex justify-end gap-2 px-8">
+      <a class="w-[28px]" target="_blank" href="https://github.com/JoaoMario17">
+        <img src="/icons/github-logo.svg" alt="github-logo">
+      </a>
+      <a class="w-[28px]" target="_blank" href="https://www.linkedin.com/in/jo%C3%A3o-m%C3%A1rio-fidelis/">
+        <img src="/icons/linkedin-logo.svg" alt="linkedin-logo">
+      </a>
+      <a class="w-[28px]" target="_blank" href="https://twitter.com/JoaoMarioF1">
+        <img src="/icons/twitter-logo.svg" alt="twitter-logo">
+      </a>
+    </div>
   </footer>
 </html>
 <style is:global>
