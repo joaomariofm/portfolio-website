@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import TitleCard from "../components/TitleCard.astro";
 import InfoCard from "../components/InfoCard.astro";
 import SkillCard from "../components/SkillCard.astro";
-import InProgress from "../components/InProgress.astro";
+import ProjectCard from '../components/ProjectCard.astro'
 ---
 
 <Layout title="Portfolio Website">
@@ -132,16 +132,38 @@ import InProgress from "../components/InProgress.astro";
       </div>
     </section>
 
-    <section class="container mx-auto p-8">
-      <div class="flex items-center gap-4 pb-10"> 
+    <section class="container mx-auto p-8 pb-4">
+      <div class="flex items-center gap-4"> 
         <TitleCard title="Projetos">
           <img src="/emojis/files-emoji.svg" alt="files-emoji">
         </TitleCard>
       </div>
-
-      <div class="w-full flex justify-center">
-        <InProgress/>
-      </div>
     </section>
+
+    <div class="
+      snap-x snap-mandatory w-screen flex gap-4 overflow-scroll 
+      md:mx-auto md:container
+      md:overflow-visible md:w-full md:grid md:grid-cols-2
+      lg:overflow-visible lg:w-full lg:grid lg:grid-cols-3
+      px-8 pb-8">
+      <div class="snap-center">
+        <ProjectCard
+          title="spining donut"
+          about="Simplesmente um donut que gira, sim... Nem tudo precisa ser útil"
+          stack={[{ name: "C" }, { name: "Shell" }]}
+          img="/donut-16:9.gif"
+          link="https://github.com/joaomariofm/spinning-donut"
+        />
+      </div>
+      <div class="snap-center">
+        <ProjectCard
+          title="matrix-effect"
+          about="Replicação do famoso 'efeito matrix', utilizado inclusive no cabeçalho desta página"
+          stack={[{ name: "TypeScript" }, { name: "Html" }]}
+          img="/matrix-16:9.gif"
+          link="https://github.com/joaomariofm/matrix-effect"
+        />
+      </div>
+    </div>
   </main>
 </Layout>

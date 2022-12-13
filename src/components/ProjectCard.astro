@@ -10,14 +10,21 @@ export interface Props {
   about: string;
   stack: Array<Technology>;
   img: string;
+  link: string;
 }
 
-const { title, about, stack, img } = Astro.props
+const { title, about, stack, img, link } = Astro.props
 ---
 
-<div class="bg-lime-600 bg-opacity-10 border-lime-600 border-2 rounded-lg min-w-[300px] flex flex-col p-4">
-  <span class="text-white font-bold text-lg">{title}</span>
-  <span class="text-white opacity-50 mt-2" >{about}</span>
+<div class="bg-lime-600 bg-opacity-10 border-lime-600 border-2 rounded-lg min-w-[300px] h-full flex flex-col p-4">
+  <div class="w-full flex justify-between">
+    <span class="text-white font-bold text-lg">{title}</span>
+    <a target="_blank" href={link} class="flex items-center gap-2 bg-lime-600 bg-opacity-10 px-2 rounded-lg">
+      <span class="text-white text-sm font-bold">acessar</span>
+      <img class="w-[20px]" src="/icons/link.svg" alt="link">
+    </a>
+  </div>
+  <span class="text-white opacity-50 mt-8" >{about}</span>
 
   <div class="w-full flex gap-2 mt-8">
     {stack.map(tech => (
