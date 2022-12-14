@@ -24,7 +24,10 @@ const { title, about, stack, img, link } = Astro.props
       <img class="w-[20px]" src="/icons/link.svg" alt="link">
     </a>
   </div>
-  <span class="text-white opacity-50 mt-8" >{about}</span>
+
+  <div class="w-full h-[65px] mt-8">
+    <span class="text-white opacity-50" >{about}</span>
+  </div>
 
   <div class="w-full flex gap-2 mt-8">
     {stack.map(tech => (
