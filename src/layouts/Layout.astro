@@ -23,28 +23,34 @@ const { title } = Astro.props;
 	</head>
 	<body>
 		<slot />
+		<footer class="bg-black gap-2 px-3 py-2">
+			<div class="container mx-auto flex items-center justify-end gap-2 px-8">
+				<a class="w-[22px]" target="_blank" href="https://github.com/joaomariofm">
+					<img src="/icons/github.svg" alt="github-logo">
+				</a>
+				<a class="w-[22px]" target="_blank" href="https://www.linkedin.com/in/jo%C3%A3o-m%C3%A1rio-fidelis/">
+					<img src="/icons/linkedin.svg" alt="linkedin-logo">
+				</a>
+				<a class="w-[22px]" target="_blank" href="https://twitter.com/joaomariofm">
+					<img src="/icons/twitter.svg" alt="twitter-logo">
+				</a>
+			</div>
+		</footer>
 	</body>
-  <footer class="bg-black gap-2 px-3 py-2">
-    <div class="container mx-auto flex items-center justify-end gap-2 px-8">
-      <a class="w-[22px]" target="_blank" href="https://github.com/joaomariofm">
-        <img src="/icons/github.svg" alt="github-logo">
-      </a>
-      <a class="w-[22px]" target="_blank" href="https://www.linkedin.com/in/jo%C3%A3o-m%C3%A1rio-fidelis/">
-        <img src="/icons/linkedin.svg" alt="linkedin-logo">
-      </a>
-      <a class="w-[22px]" target="_blank" href="https://twitter.com/joaomariofm">
-        <img src="/icons/twitter.svg" alt="twitter-logo">
-      </a>
-    </div>
-  </footer>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 	}
+
 	html {
 		font-family: 'Raleway', sans-serif;
 		background-color: #F6F6F6;
+	}
+
+	footer {
+		margin-bottom: auto;
 	}
 </style>
