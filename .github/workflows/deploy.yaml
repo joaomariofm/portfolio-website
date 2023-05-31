@@ -23,7 +23,7 @@ jobs:
   deploying:
     needs: [building]
     runs-on: ubuntu-latest
-    environment: production
+    environment: bender
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
