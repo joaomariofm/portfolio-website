@@ -31,7 +31,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist
-          path: ./dist/
+          path: ./
       - name: deploying to digital ocean instace
         uses: appleboy/scp-action@master
         with:
