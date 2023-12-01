@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import MatrixHeader from "../components/MatrixHeader.astro";
 import TitleCard from "../components/TitleCard.astro";
 import InfoCard from "../components/InfoCard.astro";
 import SkillCard from "../components/SkillCard.astro";
@@ -7,21 +8,19 @@ import ProjectCard from '../components/ProjectCard.astro'
 ---
 
 <Layout title="Portfolio Website">
-  <main class="bg-zinc-900">
 
+  <main class="bg-zinc-900">
     <div class="relative">
-      <div class="absolute bg-black w-full h-full"></div>
-      <div class="absolute w-full h-full">
-        <canvas id="matrix"></canvas>
-      </div>
-      <div class="absolute bg-black bg-opacity-30 w-full h-full"></div>
+     <MatrixHeader />
 
       <section class="container mx-auto py-10 md:p-8 mb-20">
         <div class="relative pb-12">
           <div class="flex items-center py-8">
             <div class="w-full h-fit lg:w-1/2 lg:pl-8 lg:pr-60">
-              <h1 class="text-white text-center lg:text-start text-5xl font-extrabold">Desenvolvedor 
-                <span class="text-primary">Frontend</span> e entusiasta por 
+              <h1 class="text-white text-center lg:text-start text-5xl font-extrabold">
+								Desenvolvedor 
+                <span class="text-primary">Frontend</span>
+								e entusiasta por 
                 <span class="text-primary"> Tecnologia</span>!
               </h1>
             </div>
@@ -159,7 +158,7 @@ import ProjectCard from '../components/ProjectCard.astro'
 			<div class="snap-center">
         <ProjectCard
           title="tradutor-vigenere"
-          about="Um condificador e decodificador de mensagens criptografadas em de Vigenère. Meu primeiro projeto independente, ou seja, meu primeiro contato com o processo frustrante e maravilhoso de fazer algo funcionar"
+          about="Um codificador e decodificador de mensagens criptografadas em de Vigenère. Meu primeiro projeto independente, ou seja, meu primeiro contato com o processo frustrante e maravilhoso de fazer algo funcionar"
           stack={[{ name: "C" }]}
           img="project-covers/vigenere.png"
           link="https://github.com/joaomariofm/Tradutor-Vigen-re"
