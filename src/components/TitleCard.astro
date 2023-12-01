@@ -6,10 +6,10 @@ export interface Props {
 const { title } = Astro.props
 ---
 
-<div class="bg-lime-600 bg-opacity-10 w-fit h-[60px] flex items-center justify-center gap-2 rounded-[20px] px-4">
+<div class="bg-primary bg-opacity-10 w-fit h-[60px] flex items-center justify-center gap-2 rounded-[20px] px-4">
   <div class="w-auto h-[25px]">
     <slot/>
   </div>
-  <span class="text-lime-600 text-2xl font-bold">{title}</span>
+  <span class="text-primary text-2xl font-bold">{title}</span>
 </div>
 
