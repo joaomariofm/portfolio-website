@@ -5,6 +5,8 @@ import TitleCard from "../components/TitleCard.astro";
 import InfoCard from "../components/InfoCard.astro";
 import SkillCard from "../components/SkillCard.astro";
 import ProjectCard from '../components/ProjectCard.astro'
+
+import skillsData from '../data/skills.json'
 ---
 
 <Layout title="Portfolio Website">
@@ -88,43 +90,42 @@ import ProjectCard from '../components/ProjectCard.astro'
           <SkillCard 
             icons={
               [
-                { path: "/icons/html-icon.svg", name: "html"},
-                { path: "/icons/css-icon.svg", name: "css"}
+                { path: skillsData.skills[0].components[0].image, name: skillsData.skills[0].components[0].name },
+                { path: skillsData.skills[0].components[1].image, name: skillsData.skills[0].components[1].name }
               ]
             }
-            text='É extremamente importante ter domínio de tecnologias básicas antes de se aventurar com um novo framework... Por isso, me orgulho de dominar tecnologias como html5 e css3.'
+            text={skillsData.skills[0].text}
+					/>
+
+          <SkillCard 
+            icons={
+              [
+                { path: skillsData.skills[1].components[0].image, name: skillsData.skills[1].components[0].name },
+								{ path: skillsData.skills[1].components[1].image, name: skillsData.skills[1].components[1].name },
+              ]
+            }
+            text={skillsData.skills[1].text}
           />
 
           <SkillCard 
             icons={
               [
-                { path: "/icons/js-icon.svg", name: "js"},
-                { path: "/icons/typescript-icon.svg", name: "typescript"}
+                { path: skillsData.skills[2].components[0].image, name: skillsData.skills[2].components[0].name },
+								{ path: skillsData.skills[2].components[1].image, name: skillsData.skills[2].components[1].name },
+								{ path: skillsData.skills[2].components[2].image, name: skillsData.skills[2].components[2].name },
               ]
             }
-            text='Linguagens de programação são ferramentas extremamente poderosas, e pro contexto de desenvolvimento web JavaScript é indispensável. Tenho 2 anos de experiência com a linguagem e mais recentemente tenho utilizado Typescript devido às melhoras que ele proporciona na estruturação do código e prevenção de bugs. '
-
+            text={skillsData.skills[2].text}
           />
 
           <SkillCard 
             icons={
               [
-                { path: "/icons/vue-icon.svg", name: "vue"},
-                { path: "/icons/react-icon.svg", name: "react"},
-                { path: "/icons/astro-icon.svg", name: "astro"}
+                { path: skillsData.skills[3].components[0].image, name: skillsData.skills[3].components[0].name },
+                { path: skillsData.skills[3].components[1].image, name: skillsData.skills[3].components[1].name },
               ]
             }
-            text='Já com relação a Frameworks voltados para o desenvolvimento frontend de forma geral, tenho 1 ano de experiência profissional com Vue.js. E em paralelo, estudo e utilizo frequentemente em projetos pessoais React.js e Astro. Todos são ferramentas incríveis que otimizam muito o processo de desenvolvimento.'
-          />
-
-          <SkillCard 
-            icons={
-              [
-                { path: "/icons/bootstrap-icon.svg", name: "bootstrap"},
-                { path: "/icons/tailwind-icon.svg", name: "tailwind"}
-              ]
-            }
-            text='Praticidade na estilização de uma interface pode facilitar muito o processo de desenvolvimento. E para isso, escolhi estudar os frameworks css Bootstrap e Tailwind.'
+            text={skillsData.skills[3].text}
           />
 
         </div>
