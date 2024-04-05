@@ -39,6 +39,10 @@
 					"image": "/icons/react-icon.svg"
 				},
 				{
+					"name": "angualr",
+					"image": "/icons/angular-icon.svg"
+				},
+				{
 					"name": "astro",
 					"image": "/icons/astro-icon.svg"
 				}
