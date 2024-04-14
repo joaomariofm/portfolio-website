@@ -7,8 +7,8 @@ jobs:
   building:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20.10.0'
       - name: install dependencies
@@ -16,7 +16,7 @@ jobs:
       - name: build project
         run: npm run build
       - name: upload dist folder as an artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dist
           path: ./dist
@@ -25,10 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     environment: bender
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
       - name: download dist folder artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: dist
           path: ./dist
