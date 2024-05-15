@@ -15,6 +15,7 @@ import * as stylingSkills from '../content/skills/styling-skills.md'
 // Projects
 import * as matrixEffectProject from '../content/projects/matrix-effect-project.md'
 import * as tradutorVigenereProject from '../content/projects/tradutor-vigenere-project.md'
+import * as emissaoOnlineProject from '../content/projects/emissao-online-project.md'
 ---
 
 <Layout title="Portfolio Website">
@@ -143,7 +144,18 @@ import * as tradutorVigenereProject from '../content/projects/tradutor-vigenere-
       md:mx-auto md:container
       md:overflow-x-visible md:w-full md:grid md:grid-cols-2
       lg:overflow-x-visible lg:w-full lg:grid lg:grid-cols-3
-      px-8 pb-8">
+      px-8 pb-8"
+		>
+
+			<div class="snap-center">
+        <ProjectCard
+          title={emissaoOnlineProject.frontmatter.title}
+          about={emissaoOnlineProject.rawContent()}
+          stack={emissaoOnlineProject.frontmatter.technologies}
+          imagePath={emissaoOnlineProject.frontmatter.image}
+          link={emissaoOnlineProject.frontmatter.link}
+        />
+      </div>
 
       <div class="snap-center">
         <ProjectCard

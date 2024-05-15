@@ -1,7 +1,7 @@
 ---
-title: 'Tradutor Vigenere'
-technologies: ['C']
-image: '/src/assets/project-covers/vigenere.png'
+title: 'Emissão Online'
+technologies: ['Html', 'Css', 'JavaScript', 'VueJS']
+image: '/src/assets/project-covers/emissao.png'
 link: 'https://github.com/joaomariofm/Tradutor-Vigen-re'
 ---
 
