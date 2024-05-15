@@ -22,7 +22,7 @@ if (!images[imagePath]) {
 }
 ---
 
-<div class="bg-primary bg-opacity-10 border-primary border-2 rounded-lg min-w-[300px] h-full flex flex-col p-4">
+<div class="bg-primary bg-opacity-10 border-primary border-2 rounded-lg min-w-[300px] h-full flex flex-col justify-between p-4">
   <div class="w-full flex justify-between">
     <span class="text-white font-bold text-lg">{title}</span>
     <a target="_blank" href={link} class="flex items-center gap-2 bg-primary bg-opacity-10 px-2 rounded-lg">
@@ -35,7 +35,7 @@ if (!images[imagePath]) {
     <span class="text-white font-medium opacity-50" >{about}</span>
   </div>
 
-  <div class="w-full h-fit flex gap-2 mt-8">
+  <div class="w-full flex flex-wrap-reverse gap-2 mt-8">
     {stack.map(tech => (
       <Tag title={tech}/>
     ))}
