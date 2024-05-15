@@ -1,3 +1,10 @@
+---
+import { Image } from "astro:assets";
+
+import githubLogo from "/src/assets/github.svg";
+import linkedinLogo from "/src/assets/linkedin.svg";
+---
+
 <div class="bg-black bg-opacity-60 border-primary border-2 rounded-xl w-fit flex items-center gap-4 p-6">
   <div class="">
     <img src="https://avatars.githubusercontent.com/u/65463843?v=4" alt="profile-pic" class="w-[80px] rounded-2xl">
@@ -8,10 +15,10 @@
     </div>
     <div class="flex items-center gap-2">
       <a class="w-[20px]" target="_blank" href="https://github.com/joaomariofm">
-        <img src="/icons/github.svg" alt="github-logo">
+        <Image src={githubLogo} alt="github-logo">
       </a>
       <a class="w-[20px]" target="_blank" href="https://www.linkedin.com/in/jo%C3%A3o-m%C3%A1rio-fidelis/">
-        <img src="/icons/linkedin.svg" alt="linkedin-logo">
+        <Image src={linkedinLogo} alt="linkedin-logo">
       </a>
     </div>
   </div>

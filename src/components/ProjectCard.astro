@@ -1,19 +1,25 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+
 import Tag from './Tag.astro'
 
-interface Technology {
-  name: string;
-}
+import linkImage from '/src/assets/link.svg'
 
 export interface Props {
   title: string;
   about: string;
-  stack: Array<Technology>;
-  img: string;
+  stack: Array<string>;
+  imagePath: string;
   link: string;
 }
 
-const { title, about, stack, img, link } = Astro.props
+const { title, about, stack, imagePath, link } = Astro.props
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/project-covers/*.{png,gif}')
+
+if (!images[imagePath]) {
+	throw new Error(`Image not found: ${imagePath}`)
+}
 ---
 
 <div class="bg-primary bg-opacity-10 border-primary border-2 rounded-lg min-w-[300px] h-full flex flex-col p-4">
@@ -21,7 +27,7 @@ const { title, about, stack, img, link } = Astro.props
     <span class="text-white font-bold text-lg">{title}</span>
     <a target="_blank" href={link} class="flex items-center gap-2 bg-primary bg-opacity-10 px-2 rounded-lg">
       <span class="text-white text-sm font-bold">acessar</span>
-      <img class="w-[20px]" src="/icons/link.svg" alt="link">
+      <Image src={linkImage} alt="link" class="w-[20px]">
     </a>
   </div>
 
@@ -31,12 +37,12 @@ const { title, about, stack, img, link } = Astro.props
 
   <div class="w-full h-fit flex gap-2 mt-8">
     {stack.map(tech => (
-      <Tag title={tech.name}/>
+      <Tag title={tech}/>
     ))}
   </div>
 
   <div class="overflow-hidden rounded-lg mt-2">
-    <img src={img}>
+    <Image src={images[imagePath]()} alt={title}/>
   </div>
 </div>
 
