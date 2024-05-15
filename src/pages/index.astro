@@ -2,11 +2,19 @@
 import Layout from "../layouts/Layout.astro";
 import MatrixHeader from "../components/MatrixHeader.astro";
 import TitleCard from "../components/TitleCard.astro";
-import InfoCard from "../components/InfoCard.astro";
+import ProfileCard from "../components/ProfileCard.astro";
 import SkillCard from "../components/SkillCard.astro";
 import ProjectCard from '../components/ProjectCard.astro'
 
-import skillsData from '../data/skills.json'
+// Skills
+import * as basicSkills from '../content/skills/basic-skills.md'
+import * as programmingSkills from '../content/skills/programming-skills.md'
+import * as frameworkSkills from '../content/skills/framework-skills.md'
+import * as stylingSkills from '../content/skills/styling-skills.md'
+
+// Projects
+import * as matrixEffectProject from '../content/projects/matrix-effect-project.md'
+import * as tradutorVigenereProject from '../content/projects/tradutor-vigenere-project.md'
 ---
 
 <Layout title="Portfolio Website">
@@ -24,15 +32,17 @@ import skillsData from '../data/skills.json'
 								Desenvolvedor 
                 <span class="text-primary">Frontend</span>
 								e entusiasta por 
-                <span class="text-primary"> Tecnologia</span>!
+                <span class="text-primary">Tecnologia</span>!
               </h1>
             </div>
 
             <div class="w-1/2 hidden lg:flex flex-col items-end gap-4 px-8">
 
-              <TitleCard title="Saudações!">
-                <img src="/emojis/hand-emoji.svg" alt="hand-emoji">
-              </TitleCard>
+              <TitleCard
+								title="Saudações!"
+								imagePath="/src/assets/emojis/hand-emoji.svg"
+								altText="hand-emoji"
+							/>
         
               <div class="text-white text-right max-w-[600px]">
                 <span class="font-bold">
@@ -49,7 +59,7 @@ import skillsData from '../data/skills.json'
             </div>
 
             <div class="w-full flex justify-center absolute bottom-[-100px]">
-              <InfoCard/>
+              <ProfileCard/>
             </div>
           </div>
         </div>
@@ -59,9 +69,11 @@ import skillsData from '../data/skills.json'
     <section class="lg:hidden flex container mx-auto p-8">
       <div class="flex flex-col items-start gap-4">
 
-        <TitleCard title="Saudações!">
-          <img src="/emojis/hand-emoji.svg" alt="hand-emoji">
-        </TitleCard>
+        <TitleCard
+					title="Saudações!"
+					imagePath="/src/assets/emojis/hand-emoji.svg"
+					altText="hand-emoji"
+				/>
   
         <div class="text-white text-left max-w-[600px]">
           <span>
@@ -81,9 +93,11 @@ import skillsData from '../data/skills.json'
 
     <section class="container mx-auto p-8">
       <div class="flex flex-col items-start gap-4">
-        <TitleCard title="Tecnologias">
-          <img src="/emojis/joy-stick-emoji.svg" alt="joy-stick-emoji">
-        </TitleCard>
+        <TitleCard
+					title="Tecnologias"
+					imagePath="/src/assets/emojis/joy-stick-emoji.svg"
+					altText="joy-stick-emoji"
+				/>
 
         <div class="w-full flex flex-col gap-4 
           md:grid md:grid-cols-2
@@ -91,45 +105,23 @@ import skillsData from '../data/skills.json'
         ">
 
           <SkillCard 
-            icons={
-              [
-                { path: skillsData.skills[0].components[0].image, name: skillsData.skills[0].components[0].name },
-                { path: skillsData.skills[0].components[1].image, name: skillsData.skills[0].components[1].name }
-              ]
-            }
-            text={skillsData.skills[0].text}
+            icons={basicSkills.frontmatter.icons}
+            text={basicSkills.rawContent()}
 					/>
 
           <SkillCard 
-            icons={
-              [
-                { path: skillsData.skills[1].components[0].image, name: skillsData.skills[1].components[0].name },
-								{ path: skillsData.skills[1].components[1].image, name: skillsData.skills[1].components[1].name },
-              ]
-            }
-            text={skillsData.skills[1].text}
+            icons={programmingSkills.frontmatter.icons}
+            text={programmingSkills.rawContent()}
           />
 
           <SkillCard 
-            icons={
-              [
-                { path: skillsData.skills[2].components[0].image, name: skillsData.skills[2].components[0].name },
-								{ path: skillsData.skills[2].components[1].image, name: skillsData.skills[2].components[1].name },
-								{ path: skillsData.skills[2].components[2].image, name: skillsData.skills[2].components[2].name },
-								{ path: skillsData.skills[2].components[3].image, name: skillsData.skills[2].components[3].name },
-              ]
-            }
-            text={skillsData.skills[2].text}
+            icons={frameworkSkills.frontmatter.icons}
+            text={frameworkSkills.rawContent()}
           />
 
           <SkillCard 
-            icons={
-              [
-                { path: skillsData.skills[3].components[0].image, name: skillsData.skills[3].components[0].name },
-                { path: skillsData.skills[3].components[1].image, name: skillsData.skills[3].components[1].name },
-              ]
-            }
-            text={skillsData.skills[3].text}
+            icons={stylingSkills.frontmatter.icons}
+            text={stylingSkills.rawContent()}
           />
 
         </div>
@@ -138,9 +130,11 @@ import skillsData from '../data/skills.json'
 
     <section class="container mx-auto p-8 pb-4">
       <div class="flex items-center gap-4"> 
-        <TitleCard title="Projetos">
-          <img src="/emojis/files-emoji.svg" alt="files-emoji">
-        </TitleCard>
+        <TitleCard
+					title="Projetos"
+					imagePath="/src/assets/emojis/files-emoji.svg"
+					altText="files-emoji"
+				/>
       </div>
     </section>
 
@@ -150,26 +144,27 @@ import skillsData from '../data/skills.json'
       md:overflow-x-visible md:w-full md:grid md:grid-cols-2
       lg:overflow-x-visible lg:w-full lg:grid lg:grid-cols-3
       px-8 pb-8">
+
       <div class="snap-center">
         <ProjectCard
-          title="matrix-effect"
-          about="Replicação do famoso 'efeito matrix', utilizado inclusive no cabeçalho desta página"
-          stack={[{ name: "TypeScript" }, { name: "Html" }]}
-          img="project-covers/matrix-16-9.gif"
-          link="https://github.com/joaomariofm/matrix-effect"
-        />
+          title={matrixEffectProject.frontmatter.title}
+          about={matrixEffectProject.rawContent()}
+          stack={matrixEffectProject.frontmatter.technologies}
+          imagePath={matrixEffectProject.frontmatter.image}
+          link={matrixEffectProject.frontmatter.link}
+				/>
       </div>
 
 			<div class="snap-center">
         <ProjectCard
-          title="tradutor-vigenere"
-          about="Um codificador e decodificador de mensagens criptografadas em Vigenère. Meu primeiro projeto independente, ou seja, meu primeiro contato com o processo frustrante e maravilhoso de fazer algo funcionar"
-          stack={[{ name: "C" }]}
-          img="project-covers/vigenere.png"
-          link="https://github.com/joaomariofm/Tradutor-Vigen-re"
+          title={tradutorVigenereProject.frontmatter.title}
+          about={tradutorVigenereProject.rawContent()}
+          stack={tradutorVigenereProject.frontmatter.technologies}
+          imagePath={tradutorVigenereProject.frontmatter.image}
+          link={tradutorVigenereProject.frontmatter.link}
         />
       </div>
+
     </div>
   </main>
 </Layout>
-
